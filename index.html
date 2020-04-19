@@ -22,8 +22,9 @@ Updated: 04/19/2020
 
   <!-- Custom styles for this website -->
   <link rel="stylesheet" href="website.css">
-  <!-- Custom fonts for this website -->
+  <!-- Custom fonts & icons for this website -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <script src="https://kit.fontawesome.com/ff39a724fe.js" crossorigin="anonymous"></script>
 
   <!--favicon support for all modern browsers / mobile devices-->
   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
@@ -58,7 +59,7 @@ Updated: 04/19/2020
       <a href="#results" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Results</a>
       <a href="#references" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">References</a>
       <a href="#tables" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tables</a>
-      <a target="_blank" href="https://github.com" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">GitHub</a>
+      <a target="_blank" href="https://github.com/TylerSSherman98/ECE5725-Final_Project" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">GitHub</a>
     </div>
   </nav>
 
@@ -102,22 +103,30 @@ Updated: 04/19/2020
     <div class="w3-container" id="introduction" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>Introduction.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-      <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+      <p>We are two second semester MEng students who love the outdoors!</p>
     </div>
 
     <!-- The Team -->
-    <div class="w3-row-padding w3-grayscale">
+    <div class="w3-row-padding">
       <div class="w3-col m6 w3-margin-bottom">
         <div class="w3-light-grey">
           <img src="img/Avisha.jpeg" alt="Avisha" style="width:100%">
           <div class="w3-container">
-            <h3>Avisha Kumar</h3>
-            <p class="w3-opacity">Engineer</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <h3>Avisha Kumar
+              <a target="_top" href="mailto:AK754@cornell.edu">
+                <i class="fas fa-envelope fa-fw"></i>
+              </a>
+            </h3>
+            <p class="w3-opacity">
+              BS in Electrical &amp; Computer Engineer '19
+              <br>
+              MEng in Electrical &amp; Computer Engineer '20
+            </p>
+            <p>Work distribution:
+              <li>Motion detection algorithm</li>
+              <li>Software for user notification and web interface</li>
+              <li>Tested and debugged the system</li>
+            </p>
           </div>
         </div>
       </div>
@@ -125,9 +134,21 @@ Updated: 04/19/2020
         <div class="w3-light-grey">
           <img src="img/Tyler.jpeg" alt="Tyler" style="width:100%">
           <div class="w3-container">
-            <h3>Tyler Sherman</h3>
-            <p class="w3-opacity">Engineer</p>
-            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+            <h3>Tyler Sherman
+              <a target="_top" href="mailto:TSS86@cornell.edu">
+                <i class="fas fa-envelope fa-fw"></i>
+              </a>
+            </h3>
+            <p class="w3-opacity">
+              BS in Electrical &amp; Computer Engineer '19
+              <br>
+              MEng in Electrical &amp; Computer Engineer '20
+            </p>
+            <p>Work distribution:
+              <li>Hardware design and integration</li>
+              <li>Software for servos and livestream</li>
+              <li>Tested and debugged the system</li>
+            </p>
           </div>
         </div>
       </div>
@@ -137,11 +158,38 @@ Updated: 04/19/2020
     <div class="w3-container" id="objectives" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>Project Objectives.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-      <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+      <p>This project is to build a Smart Home Security System that is cheap, robust,
+        and easy to install. It will be battery powered with access to an Internet
+        connection (Ethernet or WiFi) as the only requirement. The goal of this
+        project is to provide safety and peace of mind to the owner at an affordable
+        cost. The system should require minimal maintenance and be very easy to
+        operate.</p>
+      <p>All peripherals and sensors will be connected to the Raspberry Pi 3 Model
+        B device. The Raspberry Pi Camera Module will be mounted within a pan-tilt
+        hardware kit with two degrees of rotation enabling 180º of side-to-side
+        (pan) rotation and 150º of up-and-down (tilt) rotation. This rotation will
+        be user controllable through an online web interface, greatly expanding
+        the effective field of view. To better protect the premise, the camera
+        will perform random rotation sweeps to guard against people exploiting
+        the blind spots.</p>
+      <p>A Passive Infrared (PIR) sensor will be coupled with a computer vision
+        algorithm to detect motion and categorize threats. To conserve battery
+        life, the PIR sensor will serve as a trigger for when to initiate video
+        capture. A user, however, can override this at any point in time by
+        enabling the video live stream through the online interface. The
+        computer vision algorithm will be incorporated to enable the ability
+        to distinguish between a leaf blowing in the wind and a human moving
+        around. This requires establishing a “threat” threshold and differentiating
+        between the sizes of the objects in the frame. When a threat is detected,
+        the user will receive an urgent email notification containing an image
+        from the camera depicting the identified threat.</p>
+      <p>This system can be broken down into four parts:</p>
+      <ol>
+        <li>Hardware mounting system </li>
+        <li>Motion detection algorithm</li>
+        <li>User communication </li>
+        <li>Web interface</li>
+      </ol>
     </div>
 
     <!-- Design & Testing -->
@@ -164,7 +212,6 @@ Updated: 04/19/2020
       dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
-      <p><b>Our designers are thoughtfully chosen</b>:</p>
     </div>
 
     <!-- References / Appendix -->
@@ -176,7 +223,40 @@ Updated: 04/19/2020
       dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
-      <p><b>Our designers are thoughtfully chosen</b>:</p>
+
+      <div class="w3-row-padding">
+        <div class="w3-half w3-margin-bottom">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">Name</li>
+            <li class="w3-padding-16">Link 1</li>
+            <li class="w3-padding-16">Link 2</li>
+            <li class="w3-padding-16">Link 3</li>
+            <li class="w3-padding-16">Link 4</li>
+            <li class="w3-padding-16">Link 5</li>
+          </ul>
+        </div>
+
+        <div class="w3-half">
+          <ul class="w3-ul w3-light-grey w3-center">
+            <li class="w3-dark-grey w3-xlarge w3-padding-32">Description</li>
+            <li class="w3-padding-16">Description 1</li>
+            <li class="w3-padding-16">Description 2</li>
+            <li class="w3-padding-16">Description 3</li>
+            <li class="w3-padding-16">Description 4</li>
+            <li class="w3-padding-16">Description 5</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="w3-large w3-text-red"><b>Code Appendix.</b></h3>
+      <p>All of our project code, including the code for this website, is hosted publically on GitHub at:
+        <a target="_blank" href="https://github.com/TylerSSherman98/ECE5725-Final_Project">ECE 5725 Final Project</a>
+      </p>
+
+      <h3 class="w3-large w3-text-red"><b>Acknowledgements.</b></h3>
+      <p><b>Special thanks to Professor Joe Skovira and TAs Alex Hatzis, Caitlin
+        Stanton, Canhui Yu and Sophie He!
+      </b></p>
     </div>
 
     <!-- Tables -->
@@ -230,7 +310,7 @@ Updated: 04/19/2020
   <!-- Footer -->
   <footer>
     <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
-      <p class="w3-right">Copyright &copy; 2020, Avisha &amp; Tyler.
+      <p class="w3-right">&copy; 2020 Avisha &amp; Tyler.
       <br>Powered by
       <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
       </p>
