@@ -968,6 +968,10 @@ a {
     padding: 0 8px
 }
 
+.w3-row-padding-s {
+  padding: 0 0px
+}
+
 .w3-container, .w3-panel {
     padding:0.01em 16px
 }
