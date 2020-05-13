@@ -6,7 +6,7 @@ Spring 2020
 Cornell University
 Professor Joe Skovira
 Created: 04/18/2020
-Updated: 04/26/2020
+Updated: 05/13/2020
 -->
 
 <html lang="en">
@@ -22,6 +22,7 @@ Updated: 04/26/2020
 
   <!-- Custom styles for this website -->
   <link rel="stylesheet" href="css/website.css">
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
   <!-- Custom fonts & icons for this website -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <script src="https://kit.fontawesome.com/ff39a724fe.js" crossorigin="anonymous"></script>
@@ -45,7 +46,7 @@ Updated: 04/26/2020
       <div class="w3-quarter w3-margin-bottom">
       </div>
       <div class="w3-half w3-margin-bottom">
-        <img src="img/Cornell.png" style="width:100%">
+        <img src="img/Cornell.png" style="width:100%" alt="Cornell logo">
       </div>
       <div class="w3-quarter w3-margin-bottom">
       </div>
@@ -53,11 +54,11 @@ Updated: 04/26/2020
     <div class="w3-bar-block">
       <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
       <a href="#introduction" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introduction</a>
-      <a href="#objectives" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project Objectives</a>
+      <a href="#overview" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project Overview</a>
       <a href="#design" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Design &amp; Testing</a>
-      <a href="#results" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Results</a>
+      <a href="#results" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Results &amp; Conclusion</a>
       <a href="#references" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">References</a>
-      <a target="_blank" href="https://github.com/TylerSSherman98/ECE5725-Final_Project" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">GitHub</a>
+      <a href="#code" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Code Appendix</a>
     </div>
   </nav>
 
@@ -76,73 +77,91 @@ Updated: 04/26/2020
     <!-- Header -->
     <div class="w3-container" style="margin-top:40px">
       <h1 class="w3-jumbo"><b>Smart Home Security System</b></h1>
-      <h3 class="w3-large w3-text-red"><b>Avisha Kumar (ak754) &amp; Tyler Sherman (tss86)</b></h3>
-      <h3 class="w3-large w3-text-red">ECE 5725 - Final Project</h1>
-      <h3 class="w3-large w3-text-red">Cornell University Spring 2020</h3>
-      <h3 class="w3-large w3-text-red">Last updated: 04/26/2020</h3>
+      <h2 class="w3-xlarge w3-text-red"><b>Avisha Kumar (ak754) &amp; Tyler Sherman (tss86)</b></h2>
+      <h3 class="w3-large w3-text-red">
+        Cornell University<br>
+        ECE 5725: Embedded Operating Systems<br>
+        Final Project Spring 2020<br>
+        Last updated: 05/13/2020
+      </h3>
       <hr style="width:50px;border:5px solid red" class="w3-round">
-      <img src="img/Test3.jpeg" style="width:100%">
+      <h3 class="w3-large w3-text-red"><b>Team Photo.</b></h3>
+      <img src="img/Group.jpeg" style="width:100%" alt="Team photo">
+      <br>
+      <br>
+      <h3 class="w3-large w3-text-red"><b>Video Demonstration.</b></h3>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JfasRdmIlkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
 
     <!-- Introduction -->
     <div class="w3-container" id="introduction" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>Introduction.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>We are two second semester MEng students who love the outdoors!</p>
-    </div>
-
-    <!-- The Team -->
-    <div class="w3-row-padding">
-      <div class="w3-col m6 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <img src="img/Avisha.jpeg" alt="Avisha" style="width:100%">
-          <div class="w3-container">
-            <h3>Avisha Kumar
-              <a target="_top" href="mailto:AK754@cornell.edu">
-                <i class="fas fa-envelope fa-fw"></i>
-              </a>
-            </h3>
-            <p class="w3-opacity">
-              BS in Electrical &amp; Computer Engineer '19
-              <br>
-              MEng in Electrical &amp; Computer Engineer '20
-            </p>
-            <p>Work distribution:
-              <li>Motion detection algorithm</li>
-              <li>Software for user notification and web interface</li>
-              <li>Tested and debugged the system</li>
-            </p>
+      <h3 class="w3-large w3-text-red"><b>Our Team.</b></h3>
+      <div class="w3-row-padding">
+        <div class="w3-col m6 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="img/Avisha.jpeg" alt="Avisha" style="width:100%">
+            <div class="w3-container">
+              <h3>Avisha Kumar
+                <a target="_top" href="mailto:AK754@cornell.edu">
+                  <i class="fas fa-envelope fa-fw"></i>
+                </a>
+              </h3>
+              <p class="w3-opacity">
+                BS in Electrical &amp; Computer Engineer '19
+                <br>
+                MEng in Electrical &amp; Computer Engineer '20
+              </p>
+              <p>Work distribution:
+                <ul>
+                  <li>Motion detection algorithm</li>
+                  <li>Software for user notification and web interface</li>
+                  <li>Tested and debugged the system</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w3-col m6 w3-margin-bottom">
+          <div class="w3-light-grey">
+            <img src="img/Tyler.jpeg" alt="Tyler" style="width:100%">
+            <div class="w3-container">
+              <h3>Tyler Sherman
+                <a target="_top" href="mailto:TSS86@cornell.edu">
+                  <i class="fas fa-envelope fa-fw"></i>
+                </a>
+              </h3>
+              <p class="w3-opacity">
+                BS in Electrical &amp; Computer Engineer '19
+                <br>
+                MEng in Electrical &amp; Computer Engineer '20
+              </p>
+              <p>Work distribution:
+                <ul>
+                  <li>Hardware design and integration</li>
+                  <li>Software for servos, PIR sensor and video livestream</li>
+                  <li>Tested and debugged the system</li>
+                </ul>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="w3-col m6 w3-margin-bottom">
-        <div class="w3-light-grey">
-          <img src="img/Tyler.jpeg" alt="Tyler" style="width:100%">
-          <div class="w3-container">
-            <h3>Tyler Sherman
-              <a target="_top" href="mailto:TSS86@cornell.edu">
-                <i class="fas fa-envelope fa-fw"></i>
-              </a>
-            </h3>
-            <p class="w3-opacity">
-              BS in Electrical &amp; Computer Engineer '19
-              <br>
-              MEng in Electrical &amp; Computer Engineer '20
-            </p>
-            <p>Work distribution:
-              <li>Hardware design and integration</li>
-              <li>Software for servos, PIR sensor and video livestream</li>
-              <li>Tested and debugged the system</li>
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Objectives -->
-    <div class="w3-container" id="objectives" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>Project Objectives.</b></h1>
+    <!-- Overview -->
+    <div class="w3-container" id="overview" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Project Overview.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
+      <h3 class="w3-large w3-text-red"><b>Project Objectives.</b></h3>
+      <p>A succinct (3-4 line) summary of your problem statement.
+        A succinct (3-4 line) summary of your problem statement.
+        A succinct (3-4 line) summary of your problem statement.
+      </p>
+      <h3 class="w3-large w3-text-red"><b>Project Description.</b></h3>
       <p>This project is to build a Smart Home Security System that is cheap, robust,
         and easy to install. It will be battery powered with access to an Internet
         connection (Ethernet or WiFi) as the only requirement. The goal of this
@@ -198,16 +217,22 @@ Updated: 04/26/2020
     <div class="w3-container" id="design" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>Design &amp; Testing.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-      <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+      <h3 class="w3-large w3-text-red"><b>Development Timeline.</b></h3>
+      <p>Timeline!</p>
 
-      <h3 class="w3-large w3-text-red"><b>Software Architecture.</b></h3>
+      <h3 class="w3-large w3-text-red"><b>Hardware.</b></h3>
+      <p>Include design steps involved in the project.</p>
+
+      <h3 class="w3-large w3-text-red"><b>Software.</b></h3>
       <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-04-26T21:32:27.408Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15\&quot; etag=\&quot;zQYvGzvi0PJKU05mIKSL\&quot; version=\&quot;13.0.1\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
       <script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
+      <p>Include design steps involved in the project.</p>
 
+      <h3 class="w3-large w3-text-red"><b>Testing.</b></h3>
+      <p>Describe testing you performed to confirm that development steps of the project performed as planned.</p>
+
+      <h3 class="w3-large w3-text-red"><b>Problems Faced &amp; Overcome.</b></h3>
+      <p>Please include any issues you experienced as well as well as smooth progress in the various phases of your project.</p>
 
       <h3 class="w3-large w3-text-red"><b>Bill of Materials (BOM).</b></h3>
       <table class="w3-table-all">
@@ -262,18 +287,40 @@ Updated: 04/26/2020
       </table>
     </div>
 
-    <!-- Results -->
+
+    <!-- Results and Conclusion -->
     <div class="w3-container" id="results" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-red"><b>Results.</b></h1>
+      <h1 class="w3-xxxlarge w3-text-red"><b>Results &amp; Conclusion.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
-      <p>The best team in the world.</p>
-      <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-      incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+      <h3 class="w3-large w3-text-red"><b>Results.</b></h3>
+      <p>Did everything perform as planned?
+        Did your team meet the goals outlined in the description?.
+      </p>
+
+      <h3 class="w3-large w3-text-red"><b>Future Work.</b></h3>
+      <p>
+        What would you explore if you had more time to work on the project?
+      </p>
+
+      <h3 class="w3-large w3-text-red"><b>Conclusion.</b></h3>
+      <p>
+        What results did you project achieve?
+        What did you discover that definitely did not work?
+      </p>
+
+      <h3 class="w3-large w3-text-red"><b>Acknowledgements.</b></h3>
+      <p>We would like to thank Professor Joe Skovira and TAs Alex Hatzis,
+        Caitlin Stanton, Canhui Yu and Sophie He for their help and guidance
+        throughout the semester. Without them, this project would not have been
+        nearly as successful. Additionally, we’d like to acknowledge the Linux
+        and Raspberry Pi community at-large for providing a platform for low cost
+        hardware projects and enabling hobbyists and tinkerers to pursue their
+        passion.
       </p>
     </div>
 
-    <!-- References / Appendix -->
+    <!-- References -->
     <div class="w3-container" id="references" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-red"><b>References.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
@@ -321,22 +368,540 @@ Updated: 04/26/2020
           </ul>
         </div>
       </div>
-      <div class="w3-row-padding">
-      </div>
-      <h3 class="w3-large w3-text-red"><b>Code Appendix.</b></h3>
-      <p>All of our project code, including the code for this website, is hosted publically on GitHub at:
-        <a target="_blank" href="https://github.com/TylerSSherman98/ECE5725-Final_Project">ECE 5725 Final Project</a>
-      </p>
+    </div>
 
-      <h3 class="w3-large w3-text-red"><b>Acknowledgements.</b></h3>
-      <p>We would like to thank Professor Joe Skovira and TAs Alex Hatzis,
-        Caitlin Stanton, Canhui Yu and Sophie He for their help and guidance
-        throughout the semester. Without them, this project would not have been
-        nearly as successful. Additionally, we’d like to acknowledge the Linux
-        and Raspberry Pi community at-large for providing a platform for low cost
-        hardware projects and enabling hobbyists and tinkerers to pursue their
-        passion.
+    <!-- Code Appendix -->
+    <div class="w3-container" id="code" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Code Appendix.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <h3 class="w3-large w3-text-red"><b>GitHub Repository.</b></h3>
+      <p>All of our project code, including the code for this website, is hosted
+        publically on GitHub at:
+        <a target="_blank" href="https://github.com/TylerSSherman98/ECE5725-Final_Project">ECE 5725 Final Project</a>.
+          Code for this website is in the <i>docs</i> folder and the project source
+          code is in the <i>Project Code</i> folder.
       </p>
+      <h3 class="w3-large w3-text-red"><b>Source Code.</b></h3>
+      <p>Due to the large number of software files, only core code is included here.
+        The complete code directory is available in the GitHub repository. Account
+        usernames and passwords have been redacted where applicable.</p>
+      <div class="w3-col s5 w3-margin-bottom">
+        <p><b>launch.sh</b><br>Script to elegantly launch the system</p>
+        <pre class="prettyprint small-code"><code class="lang-bs">
+          #!/bin/bash
+          #################################################
+          # Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          # ECE 5725: Embedded OS                         #
+          # 04/22/2020                                    #
+          # Lab 5: Final Project                          #
+          #################################################
+          # Use 'chmod +x launch.sh' to make executable
+
+          # Start PiGPIO daemon
+          # Daemon must be running for library to work
+          if pgrep pigpiod
+          then
+              echo 'PiGPIO daemon running'
+          else
+              sudo pigpiod
+          fi
+
+          # Launch rapid camera network stream
+          # Use absolute path
+          python3 ~/FinalProject/webStream.py &
+
+          # Launch PIR sensor
+          # Use absolute path
+          python3 ~/FinalProject/pir.py &
+
+          # Launch servo controller
+          # Use absolute path
+          python3 ~/FinalProject/FlaskWebServer/static/scripts/servoControl.py &
+
+          # Launch Motion program
+          # -c : full path & filename of config file
+          # -b : run in daemon mode
+          motion -b -c ~/FinalProject/Motion/motion.conf &
+
+          # Launch Flask WebServer
+          # Use absolute path
+          python3 ~/FinalProject/FlaskWebServer/website.py
+
+          #---------TERMINATION & CLEANUP---------#
+          # Kill the Motion program
+          if pgrep motion
+          then
+              sudo service motion stop
+              echo 'Motion program killed'
+          else
+              echo 'Motion program not running'
+          fi
+          # Kill the python processes
+          if pgrep python
+          then
+              killall python3
+              killall python
+              echo 'Python processes killed'
+          else
+              echo 'Python not running'
+          fi
+          # Kill the PiGPIO daemon
+          if pgrep pigpiod
+          then
+              sudo killall pigpiod
+              echo 'PiGPIO daemon killed'
+          else
+              echo 'PiGPIO daemon not running'
+          fi
+        </code></pre>
+        <p><b>website.py</b><br>Flask web server</p>
+        <pre class="prettyprint small-code"><code class="lang-py">
+          #################################################
+          # Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          # ECE 5725: Embedded OS                         #
+          # 04/22/2020                                    #
+          # Lab 5: Final Project                          #
+          #################################################
+          from flask import Flask, render_template, request, url_for, copy_current_request_context
+          from flask_basicauth import BasicAuth
+          from flask_socketio import SocketIO, emit
+          from time import sleep
+          from threading import Thread, Event
+          import os
+
+          app = Flask(__name__)
+
+          # Forces username:password login for all pages
+          app.config['SECRET_KEY'] = 'XXXXXXXXXXXXXX'  #redacted
+          app.config['DEBUG'] = False
+          app.config['BASIC_AUTH_USERNAME'] = 'XXXXX'  #redacted
+          app.config['BASIC_AUTH_PASSWORD'] = 'XXXXX'  #redacted
+          app.config['BASIC_AUTH_FORCE'] = True
+          basic_auth = BasicAuth(app)
+
+          # Turn Flask app into a SocketIO app
+          socketio = SocketIO(app, async_mode=None, logger=True, engineio_logger=True)
+
+          # Create thread for PIR sensor
+          thread = Thread()
+          thread_stop_event = Event()
+
+          # Function that asynchronously updates PIR status using named pipe
+          def pirSensor():
+              # initial setup
+              prevPirStatus = 0
+              setupCount = 0
+              while not thread_stop_event.isSet():
+                   f = open("/home/pi/FinalProject/FlaskWebServer/static/scripts/pir.txt", "r")
+                   pirStatus = int(f.read()[0:1])
+                   f.close()
+                   # PIR detected motion --> changed to high
+                   if(prevPirStatus==0 and pirStatus==1):
+                       socketio.emit('pirStatus', {'pir': 'Detected'}, namespace='/pir')
+                       prevPirStatus = 1
+                   # PIR has no detected motion --> changed to low
+                   elif(prevPirStatus==1 and pirStatus==0 or pirStatus==0 and setupCount<=50):
+                       socketio.emit('pirStatus', {'pir': 'Clear'}, namespace='/pir')
+                       prevPirStatus = 0
+                       setupCount += 1
+                   socketio.sleep(1)
+
+          @app.route("/", methods=['GET', 'POST'])
+          def homepage():
+             templateData = {
+             }
+             # Respond to button presses
+             if request.method == 'POST':
+                if request.form['form'] == 'Shutdown':
+                     os.system('exec ~/FinalProject/FlaskWebServer/static/scripts/shutdown.sh')
+                if request.form['form'] == 'left':
+                     os.system('python ~/FinalProject/FlaskWebServer/static/scripts/servoLeft.py')
+                if request.form['form'] == 'right':
+                     os.system('python ~/FinalProject/FlaskWebServer/static/scripts/servoRight.py')
+                if request.form['form'] == 'up':
+                     os.system('python ~/FinalProject/FlaskWebServer/static/scripts/servoUp.py')
+                if request.form['form'] == 'down':
+                     os.system('python ~/FinalProject/FlaskWebServer/static/scripts/servoDown.py')
+                if request.form['form'] == 'center':
+                     os.system('python ~/FinalProject/FlaskWebServer/static/scripts/servoCenter.py')
+                return render_template('index.html', **templateData, scrollToAnchor='servo')
+
+             return render_template('index.html', **templateData)
+
+          @socketio.on('connect', namespace='/pir')
+          def test_connect():
+              # Need visibility of the global thread object
+              global thread
+              print('Client connected')
+              #Start PIR sensor thread only if thread has not been started
+              if not thread.isAlive():
+                  print("Starting Thread")
+                  thread = socketio.start_background_task(pirSensor)
+
+          @socketio.on('disconnect', namespace='/pir')
+          def test_disconnect():
+              print('Client disconnected')
+
+          if __name__ == '__main__':
+              socketio.run(app, host='0.0.0.0', port=8001, debug=False)
+        </code></pre>
+        <p><b>webStream.py</b><br>Create video feed from PiCamera</p>
+        <pre class="prettyprint small-code"><code class="lang-py">
+          #################################################
+          # Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          # ECE 5725: Embedded OS                         #
+          # 04/22/2020                                    #
+          # Lab 5: Final Project                          #
+          #################################################
+          '''
+          - https://picamera.readthedocs.io/en/release-1.13/recipes2.html#web-streaming
+          - Run using python3
+          - 640x480 @ 60 fps streamed to port 8000
+          '''
+          import io
+          import picamera
+          import logging
+          import socketserver
+          from threading import Condition
+          from http import server
+          <xmp>
+          PAGE="""\
+          <html>
+              <head>
+                  <title>PiCamera MJPEG Video Stream</title>
+              </head>
+              <body>
+                  <img src="stream.mjpg" width="640" height="480" />
+              </body>
+          </html></xmp>
+          """
+
+          class StreamingOutput(object):
+              def __init__(self):
+                  self.frame = None
+                  self.buffer = io.BytesIO()
+                  self.condition = Condition()
+
+              def write(self, buf):
+                  if buf.startswith(b'\xff\xd8'):
+                      # New frame, copy the existing buffer's content and notify all
+                      # clients it's available
+                      self.buffer.truncate()
+                      with self.condition:
+                          self.frame = self.buffer.getvalue()
+                          self.condition.notify_all()
+                      self.buffer.seek(0)
+                  return self.buffer.write(buf)
+
+          class StreamingHandler(server.BaseHTTPRequestHandler):
+              def do_GET(self):
+                  if self.path == '/':
+                      self.send_response(301)
+                      self.send_header('Location', '/index.html')
+                      self.end_headers()
+                  elif self.path == '/index.html':
+                      content = PAGE.encode('utf-8')
+                      self.send_response(200)
+                      self.send_header('Content-Type', 'text/html')
+                      self.send_header('Content-Length', len(content))
+                      self.end_headers()
+                      self.wfile.write(content)
+                  elif self.path == '/stream.mjpg':
+                      self.send_response(200)
+                      self.send_header('Age', 0)
+                      self.send_header('Cache-Control', 'no-cache, private')
+                      self.send_header('Pragma', 'no-cache')
+                      self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
+                      self.end_headers()
+                      try:
+                          while True:
+                              with output.condition:
+                                  output.condition.wait()
+                                  frame = output.frame
+                              self.wfile.write(b'--FRAME\r\n')
+                              self.send_header('Content-Type', 'image/jpeg')
+                              self.send_header('Content-Length', len(frame))
+                              self.end_headers()
+                              self.wfile.write(frame)
+                              self.wfile.write(b'\r\n')
+                      except Exception as e:
+                          logging.warning(
+                              'Removed streaming client %s: %s',
+                              self.client_address, str(e))
+                  else:
+                      self.send_error(404)
+                      self.end_headers()
+
+          class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
+              allow_reuse_address = True
+              daemon_threads = True
+
+          with picamera.PiCamera(resolution='640x480', framerate=60) as camera:
+              output = StreamingOutput()
+              camera.rotation = 180
+              camera.start_recording(output, format='mjpeg', quality=5)
+              try:
+                  address = ('', 8000)
+                  server = StreamingServer(address, StreamingHandler)
+                  server.serve_forever()
+              finally:
+                  camera.stop_recording()
+
+        </code></pre>
+      </div>
+      <div class="w3-col s1 w3-margin-bottom">
+      </div>
+      <div class="w3-col s5 w3-margin-bottom">
+        <p><b>msmtprc</b><br>Email configuration file</p>
+        <pre class="prettyprint small-code"><code class="lang-bsh">
+          #################################################
+          # Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          # ECE 5725: Embedded OS                         #
+          # 04/09/2020                                    #
+          # Lab 5: Final Project                          #
+          #################################################
+          # User configuration file ~/.msmtprc
+          # msmtp is an SMTP client: https://marlam.de/msmtp/
+
+          # REFERENCES
+          # https://marvintan.com/posts/send-email-using-google-stmp/
+          # Use MSMTP because SSMTP doesn't work on Buster
+          # https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=244147
+
+          # Set default values for all following accounts
+          defaults
+
+          # Use the mail submission port 587 instead of the SMTP port 25
+          port           587
+
+          # Always use TLS
+          tls            on
+          tls_starttls   on
+          tls_trust_file /etc/ssl/certs/ca-certificates.crt
+
+          # User specific log location, otherwise use /var/log/msmtp.log, however,
+          # this will create an access violation if you are user pi, and have not changes the access rights
+          logfile        ~/.msmtp.log
+
+          # ----------------------------------------------- #
+          #            Gmail service specifics              #
+          # ----------------------------------------------- #
+          account        gmail
+          # Host name of the SMTP server
+          host           smtp.gmail.com
+          # From address
+          from           ECE 5725 Security Camera
+          # Authentication: the password is given below
+          auth           on
+          user           XXXXXXXXXXXXXXXXXXXXXXX #redacted
+          password       XXXXXXXXXXXXXXXXXXXXXXX #redacted
+
+          # Set a default account
+          account default : gmail
+        </code></pre>
+        <p><b>pir.py</b><br>Monitor the PIR sensor using callbacks</p>
+        <pre class="prettyprint small-code"><code class="lang-py">
+          #!/usr/bin/env python
+          #################################################
+          # Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          # ECE 5725: Embedded OS                         #
+          # 04/20/2020                                    #
+          # Lab 5: Final Project                          #
+          #################################################
+          import RPi.GPIO as GPIO
+          import time
+          import subprocess
+
+          # Use Broadcom Numbering system
+          GPIO.setmode(GPIO.BCM)
+
+          PIR_PIN = 23
+          GPIO.setup(PIR_PIN, GPIO.IN)
+
+          # Define a threaded callback function to run in another thread when events are detected
+          def MOTION(PIR_PIN):
+              if GPIO.input(PIR_PIN): # GPIO23 == high
+                  msg = 'echo 1 > /home/pi/FinalProject/FlaskWebServer/static/scripts/pir.txt'
+                  subprocess.check_output(msg, shell=True)
+                  email = 'mutt -e "set content_type="text/html"" tss86@cornell.edu -s "ALERT - Motion Detected!" < /home/pi/FinalProject/FlaskWebServer/static/scripts/text.html'
+                  subprocess.check_output(email, shell=True)
+                  #print("Motion detected!")
+              else:                   # GPIO23 == low
+                  msg = 'echo 0 > /home/pi/FinalProject/FlaskWebServer/static/scripts/pir.txt'
+                  subprocess.check_output(msg, shell=True)
+                  #print("End of motion detection event")
+
+          # PIR needs 30-60 seconds to initialize
+          for i in range(30):
+              time.sleep(1)
+              print(i)
+
+          try:
+              # When a change edge is detected on GPIO23, regardless of whatever else
+              # is happening in the program, the function MOTION will be run
+              GPIO.add_event_detect(PIR_PIN, GPIO.BOTH, callback=MOTION)
+              while 1:
+                  time.sleep(100)
+
+          except KeyboardInterrupt:
+              print("Quit")
+              GPIO.cleanup()
+        </code></pre>
+        <p><b>pir.js</b><br>Javascript to dynamically update PIR status</p>
+        <pre class="prettyprint small-code"><code class="lang-js">
+          //#################################################
+          //# Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          //# ECE 5725: Embedded OS                         #
+          //# 04/23/2020                                    #
+          //# Lab 5: Final Project                          #
+          //#################################################
+          $(document).ready(function(){
+              var output = document.getElementById("pirStatus");
+              output.innerHTML = "";
+
+              //connect to the socket server.
+              var socket = io.connect('http://' + document.domain + ':' + location.port + '/pir');
+              //receive details from server
+              socket.on('pirStatus', function(msg) {
+                  //console.log("PIR status = " + msg.pir);
+                  //$('#pirStatus').html(msg.pir);
+                  if(msg.pir == "Detected") {
+                      var sentence = ''<xmp><h3 class='w3-xlarge w3-text-red'><b>WARNING - The PIR sensor has detected motion!</b></h3>"
+                      var img = "<img src=../static/img/Intruder.png class='pirImage'>"
+                      output.innerHTML = sentence + img;
+                  } else {
+                      var sentence = "<p>No motion has been detected.</p>"
+                      var img = "<img src=../static/img/AllClear.jpg class='pirImage'>"</xmp>
+                      output.innerHTML = sentence + img;
+                  }
+              });
+          });
+        </code></pre>
+        <p><b>servoControl.py</b><br>Controls the pan and tilt servos</p>
+        <pre class="prettyprint small-code"><code class="lang-py">
+          #!/usr/bin/env python
+          #################################################
+          # Avisha Kumar (ak754) & Tyler Sherman (tss86)  #
+          # ECE 5725: Embedded OS                         #
+          # 04/23/2020                                    #
+          # Lab 5: Final Project                          #
+          #################################################
+          # start daemon = sudo pigpiod
+          # stop daemon  = sudo killall pigpiod
+          import os
+          import errno
+          import time
+          import pigpio # uses Broadcom Numbering system
+
+          # Named Pipe
+          FIFO = '/home/pi/FinalProject/FlaskWebServer/static/scripts/servoFifo'
+          try:
+              os.mkfifo(FIFO)
+          except OSError as oe:
+              if oe.errno != errno.EEXIST:
+                  raise
+
+          # Define Constants
+          servo_pan  = 19       # GPIO19
+          servo_tilt = 18       # GPIO18
+          loc_tilt   = 0        # location of servo_tilt in duty cycle
+          loc_pan    = 0        # location of servo_pan in duty cycle
+          freq       = 50       # Hz
+          right      = 75000  # 7.5%
+          up         = 75000  # 7.5%
+          center     = 90000  # 9.0%
+          left       = 105000 # 10.5%
+          down       = 105000 # 10.5%
+          step       = 500
+
+          #------------------SERVO FUNCTIONS------------------------#
+          def pan_left():
+              global loc_pan
+              if loc_pan <= left - step:
+                  loc_pan += step
+                  pi.hardware_PWM(servo_pan, freq, loc_pan)
+                  print('servo_pan location = '+str(loc_pan))
+              else:
+                  print('ERROR: servo_pan already left')
+              time.sleep(0.1)
+          def pan_right():
+              global loc_pan
+              if loc_pan >= right + step:
+                  loc_pan -= step
+                  pi.hardware_PWM(servo_pan, freq, loc_pan)
+                  print('servo_pan location = '+str(loc_pan))
+              else:
+                  print('ERROR: servo_pan already right')
+              time.sleep(0.1)
+          def tilt_up():
+              global loc_tilt
+              if loc_tilt >= up + step:
+                  loc_tilt -= step
+                  pi.hardware_PWM(servo_tilt, freq, loc_tilt)
+                  print('servo_tilt location  = '+str(loc_tilt))
+              else:
+                  print('ERROR: servo_tilt already up')
+              time.sleep(0.1)
+          def tilt_down():
+              global loc_tilt
+              if loc_tilt <= down - step:
+                  loc_tilt += step
+                  pi.hardware_PWM(servo_tilt, freq, loc_tilt)
+                  print('servo_tilt location  = '+str(loc_tilt))
+              else:
+                  print('ERROR: servo_tilt already down')
+              time.sleep(0.1)
+          def center_servos():
+              global loc_pan
+              global loc_tilt
+              pi.hardware_PWM(servo_pan, freq, center)
+              pi.hardware_PWM(servo_tilt,  freq, center)
+              loc_pan = center
+              loc_tilt = center
+              print('centering servos')
+          #---------------------------------------------------------#
+
+          # Setup & initialize PWM
+          pi = pigpio.pi()
+          pi.hardware_PWM(servo_tilt, freq, center)
+          pi.hardware_PWM(servo_pan,  freq, center)
+          loc_tilt = center
+          loc_pan = center
+
+          # Normally, opening the FIFO blocks until the other end is opened also
+          # This way, once the pipe is closed, the code will attempt to re-open it, which will block until another writer opens the pipe
+          running = True
+          while running:
+              #print("Opening FIFO...")
+              with open(FIFO) as fifo:
+                  #print("FIFO opened")
+                  while True:
+                      cmd = (fifo.read())[0:1]
+                      if cmd == 'u':
+                          tilt_up()
+                      elif cmd == 'l':
+                          pan_left()
+                      elif cmd == 'c':
+                          center_servos()
+                      elif cmd == 'r':
+                          pan_right()
+                      elif cmd == 'd':
+                          tilt_down()
+                      elif cmd == 'q':
+                          running = False
+                          break
+
+                      # closes FIFO to limit CPU usafe
+                      if len(cmd) == 0:
+                          #print("Writer closed")
+                          break
+                      #print('Read: "{0}"'.format(data))
+
+          # Stop & cleanup
+          pi.stop()
+        </code></pre>
+      </div>
+
     </div>
 
   <!-- End page content -->
