@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+Final Project for Avisha Kumar & Tyler Sherman
+ECE 5725: Embedded Operating Systems
+Spring 2020
+Cornell University
+Professor Joe Skovira
+Created: 04/22/2020
+Updated: 04/23/2020
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Video livestream for Raspberry Pi-based security camera">
+  <meta name="keywords" content="Cornell, Engineering, ECE, Computer, Electrical, Raspberry Pi, servo, camera, Linux">
+  <meta name="author" content="Avisha Kumar, Tyler Sherman">
+  <title>Smart Home Security System - UI</title>
+
+  <!-- Custom styles for this website -->
+  <link rel="stylesheet" href="../static/css/website.css">
+  <!-- Custom fonts & icons for this website -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <script src="https://kit.fontawesome.com/ff39a724fe.js" crossorigin="anonymous"></script>
+  
+  <!-- Used to reload page at anchor point -->
+  {% if scrollToAnchor %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.location.hash = '#{{ scrollToAnchor }}';
+    });
+  </script>
+  {% endif %}
+  
+  <!-- Used for asynchronous website updates -->
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script src="static/js/pir.js"></script>
+
+  <!--favicon support for all modern browsers / mobile devices-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../static/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../static/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-small"><b>Smart Home<br>Security System</b></h3>
+      <div class="w3-quarter w3-margin-bottom">
+      </div>
+      <div class="w3-half w3-margin-bottom">
+        <img src="../static/img/Cornell.png" style="width:100%">
+      </div>
+      <div class="w3-quarter w3-margin-bottom">
+      </div>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#video" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Video Stream</a>
+      <a href="#motion" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Motion Detection</a>
+      <a href="#servo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Servo Control</a>
+      <a href="#shutdown" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Shutdown</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">&#9776;</a>
+    <span>Smart Home Security System</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Video Livestream -->
+    <div class="w3-container" id="video" style="margin-top:40px">
+      <h1 class="w3-jumbo"><b>User Control Interface</b></h1>
+      <p>Thank you for purchasing the Smart Home Security System&trade; designed by
+        Avisha Kumar and Tyler Sherman. This Raspberry Pi 3 Model B based device
+        was designed for their final project in Cornell University's ECE 5725:
+        Embedded Operating Systems in Spring 2020. A Raspberry Pi Camera Module
+        v2 provides the visuals, while a Pan/Tilt/Roll camera mount holds the
+        hardware (roll servo is disconnected).
+      </p>
+      <p>Last Updated: April 23, 2020</p>
+      <h1 class="w3-xxxlarge w3-text-red"><b>Video Livestream.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <iframe src="http://ece5725.ddns.net:8000/stream.mjpg" frameborder="0" align="middle" width="640" height="480" align="middle" scrolling="no"></iframe>
+    </div>
+
+    <!-- Motion Detection -->
+    <div class="w3-container" id="motion" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Motion Detection.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Asynchronous updates of the PIR motion sensor using SocketIO and JavaScript. 
+      The PIR sensor takes 30 seconds to initialize on start-up.</p>
+      <div class="w3-row" id="pirStatus">
+      </div>
+    </div>
+
+    <!-- Servo Control -->
+    <div class="w3-container" id="servo" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Servo Control.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Pan servo = left/right</p>
+      <p>Tilt servo = up/down</p>
+      <form method = "post">  
+        <div class="w3-row">
+          <div class="w3-col s2">
+            <p></p>
+          </div>
+          <div class="w3-col s2">
+            <input type="submit" name="form" value="up" class="w3-button w3-round w3-red button-stack">
+          </div>
+          <div class="w3-col s2">
+            <p></p>
+          </div>
+        </div>
+        <div class="w3-row">
+          <div class="w3-col s2">
+            <input type="submit" name="form" value="left" class="w3-button w3-round w3-red button-stack">
+          </div>
+          <div class="w3-col s2">
+            <input type="submit" name="form" value="center" class="w3-button w3-round w3-red button-stack">
+          </div>
+          <div class="w3-col s2">
+            <input type="submit" name="form" value="right" class="w3-button w3-round w3-red button-stack">
+          </div>
+        </div>
+        <div class="w3-row">
+          <div class="w3-col s2">
+            <p></p>
+          </div>
+          <div class="w3-col s2">
+            <input type="submit" name="form" value="down" class="w3-button w3-round w3-red button-stack">
+          </div>
+          <div class="w3-col s2">
+            <p></p>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Shutdown -->
+    <div class="w3-container" id="shutdown" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Shutdown.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Press this button to terminate the web server and shutdown the 
+      background processes.</p>
+      <form method = "post">
+        <input type="submit" name="form" value="Shutdown" class="w3-button w3-round w3-red button-full">
+      </form>
+    </div>
+
+  <!-- End page content -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+      <p class="w3-right">&copy; 2020 Avisha &amp; Tyler.
+      <br>Powered by
+      <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+  // Script to open sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+  // Script to close sidebar
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+
+</body>
+
+</html>
+
+
