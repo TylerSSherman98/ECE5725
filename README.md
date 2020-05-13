@@ -9,5 +9,5 @@ Spring 2020: 05/13/2020
 The website is accessible at: [ECE 5725 Final Project](https://tyler-s-sherman.com/ECE5725-Final_Project)
 
 ## Repository Structure
-- docs: contains the documentation code for the final report website
-- Project Code: contains the project source code files
+- *docs*: contains the documentation code for the final report website
+- *Project Code*: contains the project source code files
