@@ -1744,12 +1744,10 @@ body {
 .w3-half img {
   margin-bottom: -6px;
   margin-top: 16px;
-  opacity: 0.8;
+  opacity: 1.0;
 }
 
-.w3-half img:hover {
-  opacity: 1
-}
+
 
 .video-container {
     position: relative;
@@ -1768,4 +1766,8 @@ body {
 .small-code {
     font-size: 60%;
     word-wrap: break-word;
+}
+
+.justify-paragraph {
+    text-align: justify;
 }

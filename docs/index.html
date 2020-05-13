@@ -75,14 +75,14 @@ Updated: 05/13/2020
   <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
     <!-- Header -->
-    <div class="w3-container" style="margin-top:40px">
+    <div class="w3-container" style="margin-top:20px">
       <h1 class="w3-jumbo"><b>Smart Home Security System</b></h1>
       <h2 class="w3-xlarge w3-text-red"><b>Avisha Kumar (ak754) &amp; Tyler Sherman (tss86)</b></h2>
       <h3 class="w3-large w3-text-red">
         Cornell University<br>
         ECE 5725: Embedded Operating Systems<br>
-        Final Project Spring 2020<br>
-        Last updated: 05/13/2020
+        Final Project: Monday Lab Section<br>
+        Spring 2020: 05/13/2020
       </h3>
       <hr style="width:50px;border:5px solid red" class="w3-round">
       <h3 class="w3-large w3-text-red"><b>Team Photo.</b></h3>
@@ -119,7 +119,7 @@ Updated: 05/13/2020
               <ul>
                 <li>Motion detection algorithm</li>
                 <li>Software for user notification and web interface</li>
-                <li>Tested and debugged the system</li>
+                <li>Testing and debugging</li>
               </ul>
             </div>
           </div>
@@ -142,7 +142,7 @@ Updated: 05/13/2020
               <ul>
                 <li>Hardware design and integration</li>
                 <li>Software for servos, PIR sensor and video livestream</li>
-                <li>Tested and debugged the system</li>
+                <li>Testing and debugging</li>
               </ul>
             </div>
           </div>
@@ -155,60 +155,65 @@ Updated: 05/13/2020
       <h1 class="w3-xxxlarge w3-text-red"><b>Project Overview.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
       <h3 class="w3-large w3-text-red"><b>Project Objectives.</b></h3>
-      <p>A succinct (3-4 line) summary of your problem statement.
-        A succinct (3-4 line) summary of your problem statement.
-        A succinct (3-4 line) summary of your problem statement.
+      <p class="justify-paragraph">
+        Your home is where your loved ones sleep. Your home is where your most
+        cherished belongings are stored. Your home must be safe. The objective
+        of this project is to build a Smart Home Security System. This enables
+        deterrence through accountability, protecting your home and everything
+        it stands for. Objectives include:
       </p>
+      <ul>
+        <li>High resolution and low latency real-time video stream</li>
+        <li>Controllable camera movement</li>
+        <li>Motion detection</li>
+        <li>Instant email alerts</li>
+        <li>Globally accessible web interface</li>
+      </ul>
       <h3 class="w3-large w3-text-red"><b>Project Description.</b></h3>
-      <p>This project is to build a Smart Home Security System that is cheap, robust,
-        and easy to install. It will be battery powered with access to an Internet
-        connection (Ethernet or WiFi) as the only requirement. The goal of this
-        project is to provide safety and peace of mind to the owner at an affordable
-        cost. The system should require minimal maintenance and be very easy to
-        operate.</p>
-      <p>All peripherals and sensors will be connected to the Raspberry Pi 3 Model
-        B device. The Raspberry Pi Camera Module will be mounted within a pan-tilt
+      <p class="justify-paragraph">
+        This project is to build a Smart Home Security System that is cheap,
+        robust and easy to install. It can be wall-powered or battery powered,
+        with access to an Internet connection (Ethernet or WiFi) as the only
+        requirement. The goal of this project is to provide safety and peace of
+        mind to the owner at an affordable cost. The system requires minimal
+        maintenance and is very easy to operate.
+        <br>
+        <br>
+        All peripherals and sensors are connected to the Raspberry Pi 3 Model B
+        device. The Raspberry Pi Camera Module is mounted within a pan-tilt
         hardware kit with two degrees of rotation enabling 180º of side-to-side
-        (pan) rotation and 150º of up-and-down (tilt) rotation. This rotation will
-        be user controllable through an online web interface, greatly expanding
-        the effective field of view. To better protect the premise, the camera
-        will perform random rotation sweeps to guard against people exploiting
-        the blind spots.</p>
-      <p>A Passive Infrared (PIR) sensor will be coupled with a computer vision
-        algorithm to detect motion and categorize threats. To conserve battery
-        life, the PIR sensor will serve as a trigger for when to initiate video
-        capture. A user, however, can override this at any point in time by
-        enabling the video live stream through the online interface. The
-        computer vision algorithm will be incorporated to enable the ability
-        to distinguish between a leaf blowing in the wind and a human moving
-        around. This requires establishing a “threat” threshold and differentiating
-        between the sizes of the objects in the frame. When a threat is detected,
-        the user will receive an urgent email notification containing an image
-        from the camera depicting the identified threat.</p>
-      <p>This system can be broken down into four parts:</p>
+        (pan) rotation and 150º of up-and-down (tilt) rotation. The camera
+        movement is user controllable through an online web interface, which
+        greatly expands the effective field of view.
+        <br>
+        <br>
+        A Passive Infrared (PIR) sensor is coupled with a computer vision
+        algorithm to detect motion. When a threat is detected, an email is
+        immediately sent to alert the owner. The email notification contains a
+        link to the web interface and an image identifying the threat.
+        <br>
+        <br>
+        This system can be broken down into five parts:
+      </p>
       <ol>
-        <li>Hardware mounting system </li>
-        <li>Motion detection algorithm</li>
-        <li>User communication </li>
+        <li>Video stream</li>
+        <li>Pan-tilt system</li>
+        <li>Motion detection</li>
+        <li>User notification </li>
         <li>Web interface</li>
       </ol>
-
       <!-- Photo grid (modal) -->
       <div class="w3-row-padding">
         <div class="w3-half">
-          <img src="img/Test.jpeg" style="width:100%" alt="Concrete meets bricks">
-          <img src="img/Test2.jpeg" style="width:100%" alt="Light, white and tight scandinavian design">
-          <img src="img/Test2.jpeg" style="width:100%" alt="White walls with designer chairs">
+          <img src="img/Circuit1.jpg" style="width:100%" alt="Circuit diagram 1">
+          <img src="img/Circuit3.jpg" style="width:100%" alt="Circuit diagram 3">
         </div>
 
         <div class="w3-half">
-          <img src="img/Test.jpeg" style="width:100%" alt="Windows for the atrium">
-          <img src="img/Test2.jpeg" style="width:100%" alt="Bedroom and office in one space">
-          <img src="img/Test2.jpeg" style="width:100%" alt="Scandinavian design">
+          <img src="img/Circuit2.jpg" style="width:100%" alt="Circuit diagram 2">
+          <img src="img/Surveillance_Graphic.jpg" style="width:100%" alt="Still from video feed">
         </div>
       </div>
-
-
     </div>
 
     <!-- Design & Testing -->
@@ -216,10 +221,59 @@ Updated: 05/13/2020
       <h1 class="w3-xxxlarge w3-text-red"><b>Design &amp; Testing.</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
       <h3 class="w3-large w3-text-red"><b>Development Timeline.</b></h3>
-      <p>Timeline!</p>
+      <ul>
+        <li>Project Week 1: 04/06</li>
+        <ul>
+          <li>Set up Raspberry Pi system for remote management</li>
+          <li>Connect and enable camera module</li>
+        </ul>
+        <li>Project Week 2: 04/13</li>
+        <ul>
+          <li>Set up camera for Internet-based live streaming</li>
+          <li>Start developing algorithm to detect motion from video feed</li>
+          <li>Set up hardware with pan-tilt kit</li>
+        </ul>
+        <li>Project Week 3: 04/20</li>
+        <ul>
+          <li>Continue refining computer vision algorithm</li>
+          <li>Start work on controlling the camera and pan-tilt system</li>
+          <li>Begin developing web interface</li>
+        </ul>
+        <li>Project Week 4: 04/27</li>
+        <ul>
+          <li>Integrate the system</li>
+          <li>Develop user notification messaging process</li>
+          <li>Test the motion detection and notification process</li>
+        </ul>
+        <li>Project Week 5: 05/04</li>
+        <ul>
+          <li>Stress test the system</li>
+          <li>Finalize the system</li>
+        </ul>
+        <li>Demonstrations: 5/12-5/19</li>
+        <ul>
+          <li>Virtual demonstration of final project</li>
+        </ul>
+      </ul>
 
       <h3 class="w3-large w3-text-red"><b>Hardware.</b></h3>
-      <p>Include design steps involved in the project.</p>
+      <p class="justify-paragraph">
+        The difficulty of this project was compounded due to COVID-19 pandemic. Tyler had all of the hardware, but unlike on campus, he only had access to a very limited toolset (i.e., wire stripper) and did not have any circuit equipment (multimeter, oscilloscope, etc.). Nonetheless, we were able to connect all of our hardware as detailed in the circuit diagram below. Clearly, we did not use the piTFT display. This was a conscious decision because of the embedded nature of our device. Instead of the piTFT display, a website was designed as the user information and control mechanism.
+        <br>
+        <br>
+        The servos are connected to the hardware PWM GPIO pins (18 and 19). A switch is inserted between the servos and the 6V battery pack (four AA batteries) to enable easily disconnecting the servos when not in use, preserving the batteries.
+        <br>
+        <br>
+        Current limiting resistors (1kΩ) are used between the external devices and the GPIO pins. This is essential because we are controlling hardware with software. The current limiting resistors are used to protect the GPIO pins from problematic software mistakes (accidentally programming the input pin as an output). The current limiting resistors would keep the generated current within the tolerance of the GPIO pins even if such a mistake were to occur.
+        <br>
+        <br>
+        A simple solution—double sided adhesive foam tape—was used to mount the R-Pi Camera Module V2 to the pan-tilt base. While we initially planned to make a nice laser cut container to package all of the hardware, the pandemic made this impossible.
+      </p>
+      <div class="w3-row-padding">
+        <div class="w3-col s12">
+          <img src="img/Schematic_Complete.png" style="width:100%" alt="Circuit schematic">
+        </div>
+      </div>
 
       <h3 class="w3-large w3-text-red"><b>Software.</b></h3>
       <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-04-26T21:32:27.408Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15\&quot; etag=\&quot;zQYvGzvi0PJKU05mIKSL\&quot; version=\&quot;13.0.1\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
@@ -227,12 +281,86 @@ Updated: 05/13/2020
       <p>Include design steps involved in the project.</p>
 
       <h3 class="w3-large w3-text-red"><b>Testing.</b></h3>
-      <p>Describe testing you performed to confirm that development steps of the project performed as planned.</p>
+      <p class="justify-paragraph">
+        We followed an incremental testing approach that mirrored our development plan. This enabled us to parallelize our work, ensuring each individual component was fully functional before being integrated into the system-at-large. During week 2, we spent a lot of time familiarizing ourselves with the configuration options for the Motion program. This let us iterate our motion detection thresholds without relying on other programs. During week 2 we also figured out how to send automated emails, and we practiced this in various configurations. Doing this early on made it trivial to integrate later.
+        <br>
+        <br>
+        Testing the pan-tilt hardware was complicated by the lack of tools (multimeter, wires, etc.) available, but we took it slow and made it work. Using the PiGPIO library and Pygame, we built a simple remote to control the servos. This greatly aided in our debugging of the system.
+      </p>
+      <div class="w3-row-padding">
+        <div class="w3-col s4">
+          <p></p>
+        </div>
+        <div class="w3-col s3">
+          <img src="img/Pygame_Servo_Control.png" style="width:100%" alt="Remote to control servos">
+        </div>
+        <div class="w3-col s5">
+          <p></p>
+        </div>
+      </div>
+      <p class="justify-paragraph">
+        In addition, we created programs to test launching background processes, building a Flask web server and streaming camera footage. All testing files are located in the GitHub repository under /Project Code/Testing. In the end, we “stress tested” our system by having it run for an extended period of time. During this, all the various user control functions were tested to ensure proper operation.
+      </p>
 
-      <h3 class="w3-large w3-text-red"><b>Problems Faced &amp; Overcome.</b></h3>
-      <p>Please include any issues you experienced as well as well as smooth progress in the various phases of your project.</p>
+      <h3 class="w3-large w3-text-red"><b>Problems Faced.</b></h3>
+      <p>We faced numerous issues throughout our project. This included:</p>
+      <ul>
+        <li>R-Pi Camera Issue with Multiple Clients</li>
+        <ul>
+          <li><i>
+              mmal: mmal_vc_component_enable: failed to enable component: ENOSPC<br>
+              mmal: camera component couldn't be enabled<br>
+              mmal: main: Failed to create camera component<br>
+              mmal: Failed to run camera app. Please check for firmware updates</i>
+          </li>
+          <li>This error occured because a background process was mistakenly
+            using the camera, but the camera only supports a single client at a
+            time
+          </li>
+        </ul>
+        <li>Servo Jitter</li>
+        <ul>
+          <li>The two micro-servos used in the pan-tilt kit were initially very
+            choppy and did not have the smooth movement we required. This was
+            due to the fact that we were using the RPi.GPIO library and driving
+            the servos with software PWM. Since the user has the lowest priority
+            on the R-Pi system, our process was getting interrupted, causing the
+            extremely time-sensitive PWM signal to be disrupted.
+          </li>
+          <li>After speaking with Professor Skovira, he recommended we use
+            hardware PWM instead. We switched to the PiGPIO library and used
+            hardware PWM, which resolved our issues. Importantly, we had to
+            rewire the circuit to use the hardware PWM GPIO pins (18 and 19).
+          </li>
+          <li>Finally, once we had the hardware PWM set up, it took some time to
+            debug the servos because there is no datasheet that explains the
+            timing parameters. After some trial and error, we determined the
+            proper duty cycles for each servo position.
+          </li>
+        </ul>
+        <li>Unsupported Email Client</li>
+        <ul>
+          <li>The ssmtp client for sending emails is not supported on Buster</li>
+          <li>The msmtp client should be used instead</li>
+        </ul>
+        <li>Python Versioning</li>
+        <ul>
+          <li>When we developed the bash script that launches and tears down the
+            system, we noticed that some processes continued to run in the background
+          </li>
+          <li>After a lot of investigating, we realized some python scripts were
+            being run with python 2.x and some with python 3.x.
+          </li>
+          <li>We switched all scripts to run with python 3 and our problem was
+            resolved.
+          </li>
+        </ul>
+      </ul>
 
       <h3 class="w3-large w3-text-red"><b>Bill of Materials (BOM).</b></h3>
+      <p>Our complete hardware list is included in the below Bill of Materials (BOM).
+        Our total budget is well below the $100 per team limit.
+      </p>
       <table class="w3-table-all">
         <tr class="w3-red">
           <th>Component</th>
@@ -292,23 +420,75 @@ Updated: 05/13/2020
       <hr style="width:50px;border:5px solid red" class="w3-round">
 
       <h3 class="w3-large w3-text-red"><b>Results.</b></h3>
-      <p>Did everything perform as planned?
-        Did your team meet the goals outlined in the description?.
+      <p class="justify-paragraph">
+        After countless hours, many tests, lots of research and despite the
+        circumstances, all aspects of the Smart Home Security System work as
+        expected. The system gracefully starts using the launch script.
+        Likewise, clicking the shutdown button on the website gracefully tears
+        the system down and kills all the background processes. The video
+        stream has been optimized to minimize latency and the motion detection
+        thresholds have been refined through numerous trials. Emails are
+        automatically sent to alert the user when motion is detected.
+        <br>
+        <br>
+        The result of our work is a responsive, globally accessible website
+        interface that displays the video stream and the motion detection
+        status of the PIR sensor. Additionally, the website allows the user to
+        control the camera movement and shutdown the system. For security
+        purposes, the website is protected using a username and password.
+        <br>
+        <br>
+        The user control website interface looks as follows:
       </p>
+      <div class="w3-row-padding">
+        <div class="w3-col s12">
+          <img src="img/WebInterface.png" style="width:100%" alt="Web interface">
+        </div>
+      </div>
+      <p class="justify-paragraph">
+        When the PIR sensor detects motion, the Motion Detection section of the
+        website is asynchronously updated as follows:
+      </p>
+      <div class="w3-row-padding">
+        <div class="w3-col s12">
+          <img src="img/WebInterface_Motion.png" style="width:100%" alt="Web interface with motion detected">
+        </div>
+      </div>
+      <br>
 
       <h3 class="w3-large w3-text-red"><b>Future Work.</b></h3>
-      <p>
-        What would you explore if you had more time to work on the project?
+      <p>There are many avenues for further exploration and improvement. Areas
+        include:
       </p>
+      <ul>
+        <li>Security enhancements including encryption and multiple user logins</li>
+        <li>Mobile application to replace website interface on mobile devices</li>
+        <li>Random camera movement to eliminate blind spots</li>
+        <li>Laser cut box to hold the hardware </li>
+      </ul>
 
       <h3 class="w3-large w3-text-red"><b>Conclusion.</b></h3>
-      <p>
-        What results did you project achieve?
-        What did you discover that definitely did not work?
+      <p class="justify-paragraph">
+        The beginning of this project coincided with the emergence of the
+        COVID-19 pandemic in the U.S. The circumstances enabled us to learn a
+        great deal about remote management systems and networking. All circuitry
+        work was done with limited tools and zero equipment, illustrating what is
+        possible when you improvise and have an open mind and flexible attitude.
+        Despite the incredible circumstances, we achieved all the objectives outlined in our
+        project proposal. We implemented a full functional embedded home security
+        system on a resource constrained hardware platform. The system is
+        globally accessible, has a responsive web interface, performs motion
+        detection using both a PIR sensor and a computer vision algorithm and
+        provides instant motion detection alerts via an automated email mechanism.
+        A significant portion of this project required researching, understanding,
+        installing and modifying various third-party APIs to support our hardware,
+        which was a great learning experience for our future careers. Amazingly,
+        this powerful system is extremely cheap!
       </p>
 
       <h3 class="w3-large w3-text-red"><b>Acknowledgements.</b></h3>
-      <p>We would like to thank Professor Joe Skovira and TAs Alex Hatzis,
+      <p class="justify-paragraph">
+        We would like to thank Professor Joe Skovira and TAs Alex Hatzis,
         Caitlin Stanton, Canhui Yu and Sophie He for their help and guidance
         throughout the semester. Without them, this project would not have been
         nearly as successful. Additionally, we’d like to acknowledge the Linux
