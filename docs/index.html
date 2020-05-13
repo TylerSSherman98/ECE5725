@@ -259,8 +259,22 @@ Updated: 05/13/2020
       <h3 class="w3-large w3-text-red"><b>Hardware.</b></h3>
       <p class="justify-paragraph">
         The difficulty of this project was compounded due to COVID-19 pandemic. Tyler had all of the hardware, but unlike on campus, he only had access to a very limited toolset (i.e., wire stripper) and did not have any circuit equipment (multimeter, oscilloscope, etc.). Nonetheless, we were able to connect all of our hardware as detailed in the circuit diagram below. Clearly, we did not use the piTFT display. This was a conscious decision because of the embedded nature of our device. Instead of the piTFT display, a website was designed as the user information and control mechanism.
-        <br>
-        <br>
+      </p>
+      <div class="w3-row-padding">
+        <div class="w3-col s4">
+          <p style="text-align: center">R-Pi Camera Module V2</p>
+          <img src="img/camera.png" style="width:100%" alt="Camera module">
+        </div>
+        <div class="w3-col s4">
+          <p style="text-align: center">Example of pan-tilt rotation</p>
+          <img src="img/pan_tilt.png" style="width:100%" alt="Pan-Tilt rotation">
+        </div>
+        <div class="w3-col s4">
+          <p style="text-align: center">HC-SR501 PIR Sensor</p>
+          <img src="img/pir.png" style="width:100%" alt="PIR sensor">
+        </div>
+      </div>
+      <p class="justify-paragraph">
         The servos are connected to the hardware PWM GPIO pins (18 and 19). A switch is inserted between the servos and the 6V battery pack (four AA batteries) to enable easily disconnecting the servos when not in use, preserving the batteries.
         <br>
         <br>
@@ -270,15 +284,53 @@ Updated: 05/13/2020
         A simple solution—double sided adhesive foam tape—was used to mount the R-Pi Camera Module V2 to the pan-tilt base. While we initially planned to make a nice laser cut container to package all of the hardware, the pandemic made this impossible.
       </p>
       <div class="w3-row-padding">
-        <div class="w3-col s12">
+        <div class="w3-col s2">
+          <p></p>
+        </div>
+        <div class="w3-col s8">
+          <p style="text-align: center">Circuit schematic</p>
           <img src="img/Schematic_Complete.png" style="width:100%" alt="Circuit schematic">
+        </div>
+        <div class="w3-col s2">
+          <p></p>
         </div>
       </div>
 
       <h3 class="w3-large w3-text-red"><b>Software.</b></h3>
+      <p class="justify-paragraph">
+        The first thing we did is develop a comprehensive set of tools to remotely manage the Raspberry Pi system. The R-Pi system is located at Tyler’s house with an HDMI monitor, mouse and keyboard. On Tyler’s local network, the R-Pi has the static IP address 192.168.7.194. We used Dynamic DNS by NoIP to enable accessing Tyler’s home network using a hostname. Combined the port forwarding on Tyler’s home router, this enabled global access to the R-Pi. Additionally, we turned on RealVNC to enable access to the R-Pi desktop.
+        <br>
+        <br>
+        To achieve a high frame rate and low latency video stream, we used <a target="_blank" href="https://picamera.readthedocs.io/en/release-1.13/recipes2.html#web-streaming">"Advanced Recipe 4.10 - Web Streaming"</a> from the PiCamera documentation. This is a simple HTTP server that achieves significantly higher frame rates than anything else we tested (mjpg-streamer, Motion program, RPi-Cam-Web-Interface). This is implemented in webStream.py. It is the only process to directly interact with the camera. The video stream is served to the other programs that require it. The video is streamed at 60 fps with a resolution of 640x480 pixels.
+        <br>
+        <br>
+        To implement our computer vision algorithm for motion detection, we used the <a target="_blank" href="https://motion-project.github.io">Motion program</a>. Motion is a highly configurable program that monitors video signals from many camera types. In our case, we pass through the video stream from webStream.py. The motion detection algorithm looks at the number of changed pixels in consecutive frames. A motion event is triggered when greater than 5% of the total pixels in the frame are different, after filtering and noise reduction. To trigger a motion detection alert, three consecutive frames must contain a motion event. A motion detection alert is ended after 10 consecutive seconds of no motion detected.
+        <br>
+        <br>
+        The pir.py python program performs motion detection using the PIR sensor. This function uses callbacks due to their improved efficiency over polling. Importantly, this function includes a 30 second warm up period in which the PIR sensor acclimates to the environment. This initialization period is essential for proper operation.
+        <br>
+        <br>
+        When motion is detected, whether by PIR sensor or the computer vision algorithm, an email alert is sent to the user. The email contains a hyperlink to take the user directly to the livestream. If the motion alert was triggered by the computer vision algorithm, it will also include an image from the video stream with a box drawn to identify the motion. This is achieved using the <a target="_blank" href="http://www.mutt.org">Mutt</a> utility, which allows you to send an HTML file as the body of the email. <a target="_blank" href="https://marlam.de/msmtp/">msmtp</a>, an SMTP client, and a free Google email address are used.
+        <br>
+        <div class="w3-row-padding">
+          <div class="w3-col s3">
+            <p></p>
+          </div>
+          <div class="w3-col s5">
+            <img src="img/Email.jpeg" style="width:100%" alt="Motion detected email alert">
+          </div>
+          <div class="w3-col s4">
+            <p></p>
+          </div>
+        </div>
+        <br>
+        We evaluated multiple web server technologies for the user interface. Motion, <a target="_blank" href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a> and <a target="_blank" href="https://github.com/jacksonliam/mjpg-streamer">mjpg-streamer</a> don’t allow for customization, and <a target="_blank" href="https://www.djangoproject.com">Django</a> seemed too heavy for our needs; we settled on <a target="_blank" href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>. The website is designed using a responsive single page template by <a target="_blank" href="https://www.w3schools.com/css/css_rwd_templates.asp">W3Schools</a> with heavily customized HTML and CSS. We used Flask configuration settings to force a user login on the website to add security. The video stream from the simple HTTP server is displayed for the user. We used JavaScript to enable user control of the pan-tilt servos through HTML buttons and we used Flask-SocketIO to asynchronously pass data from the PIR sensor to the website. Bash scripts are used to elegantly start-up and shutdown the system.
+        <br>
+        <br>
+        Our complete software architecture is described in the flowchart below.
+      </p>
       <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;lightbox&quot;:false,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-04-26T21:32:27.408Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15\&quot; etag=\&quot;zQYvGzvi0PJKU05mIKSL\&quot; version=\&quot;13.0.1\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;C5RBs43oDa-KdzZeNtuy\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
       <script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
-      <p>Include design steps involved in the project.</p>
 
       <h3 class="w3-large w3-text-red"><b>Testing.</b></h3>
       <p class="justify-paragraph">
